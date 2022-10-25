@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,13 +26,13 @@
             <tbody>
                 <?php
                 require 'backend/products.php';
-                while ($row = mysqli_fetch_array($results)) {
+                while ($prod = mysqli_fetch_array($products)) {
                 ?>   
                     <tr>
-                    <td><?= $row['produto'] ?></td>
-                    <td><?= number_format($row['qtde'], 2, ',', '.') ?> </td>
-                    <td><?= number_format($row['precovenda'], 2, ',', '.') ?></td>
-                    <td><a href="backend/products.php?delid=<?= $row['controle'] ?>" class="delete" title="Remover registro" onclick="return confirm('Deseja realmente apagar o registro?');">Apagar</a></td>
+                    <td><?= $prod['produto'] ?></td>
+                    <td><?= number_format($prod['qtde'], 2, ',', '.') ?> </td>
+                    <td><?= number_format($prod['precovenda'], 2, ',', '.') ?></td>
+                    <td><a href="backend/products.php?delid=<?= $prod['controle'] ?>" class="delete" title="Remover registro" onclick="return confirm('Deseja realmente apagar o registro?');">Apagar</a></td>
                     </tr>
                 <?php
                 }

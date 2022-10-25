@@ -2,7 +2,7 @@
 require "connection.php";
 $sql = "SELECT controle,produto, qtde, precovenda FROM estoque";
 
-$results = $conn->query($sql);
+$products = $conn->query($sql);
 
 if(isset($_GET['delid'])) {
     $id = intval($_GET['delid']);
